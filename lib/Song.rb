@@ -30,9 +30,9 @@ class Song
   end 
   
   
-  def create
-    Song.new 
-    Song
+  def self.create(name)
+    self.new(name) 
+    return Song
   end 
   
   
