@@ -1,15 +1,21 @@
 require 'pry'
 
 class Song
-  attr_accessor :name, :artist, :genre 
+  #attr_accessor :name, :artist, :genre 
   @@all = []
-  
-  
-  def initialize(name)
+   
+   
+   def initialize(name)
     @name = name 
     save 
   end 
-    
+  
+  
+  def name 
+    @name = name
+  end
+   # Classical get method
+  
     
   def self.all 
      @@all 
