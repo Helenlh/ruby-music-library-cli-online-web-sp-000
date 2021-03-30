@@ -1,10 +1,12 @@
 class Artist 
-  
+   @@all = [] 
   
   def initialize(name)
-    @@all = [] 
+    @name = name 
+    save 
   end 
-  
+
+
   def name
     @name
   end 
@@ -16,11 +18,11 @@ class Artist
   
   
   def self.all 
-    @@all << self 
+    @@all
   end 
   
   
-  def self.destroy.all 
+  def self.destroy_all 
     @@all = []
   end 
   
@@ -28,4 +30,10 @@ class Artist
   def save 
     @@all << self 
   end 
-end 
+  
+  
+  def self.create(name)
+    self.new(name) 
+    return Artist
+  end 
+end
