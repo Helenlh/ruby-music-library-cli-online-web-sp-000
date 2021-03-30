@@ -1,8 +1,9 @@
 class Artist 
    @@all = [] 
   
-  def initialize(name)
-    @name = name 
+  def initialize(name, song)
+    @name = name
+    @song = []  
     save 
   end 
 
@@ -36,4 +37,13 @@ class Artist
     self.new(name) 
     return Artist
   end 
+  
+  
+  def add_song(song)
+    song.artist = self
+  end 
+  
+  
+  
+    
 end

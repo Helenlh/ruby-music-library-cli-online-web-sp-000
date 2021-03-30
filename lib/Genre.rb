@@ -35,9 +35,17 @@ class  Genre
   end 
   
   
+  def songs 
+    self.songs 
+  end 
+  
   
   def self.destroy_all 
     @@all = [] 
   end 
+  
+  
+  def artists
+    
   
 end

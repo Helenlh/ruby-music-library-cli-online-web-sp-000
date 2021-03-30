@@ -4,7 +4,7 @@ class Song
   @@all = []
    
    
-   def initialize(name)
+   def initialize(name, song, genre = what)
     @name = name 
     save 
   end 
@@ -49,9 +49,10 @@ class Song
   end 
   
   
-  def self.destroy_all
-    @@all = []
-  end 
+  
+  def genre
+    # if self.genre! = nil
+    # @song << Song.genre 
+  end
 end 
-      
-      
+
