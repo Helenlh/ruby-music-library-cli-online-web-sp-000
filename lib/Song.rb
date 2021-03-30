@@ -10,10 +10,6 @@ class Song
     save 
   end 
   
-  
-  def name 
-    @name = name
-  end
    # Classical get method
   
     
