@@ -1,0 +1,13 @@
+def Findable
+  module ClassMethods
+  
+  def find_by_name(name)
+    self.all.detect {|a| a. name}
+    end 
+  end 
+  
+  
+  def self.find_or_create_by_name(artist)
+    self.find(artist)? self.find(artist): self.new(artist)
+  end 
+end 
