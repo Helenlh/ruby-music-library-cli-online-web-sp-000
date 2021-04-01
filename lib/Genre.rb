@@ -45,7 +45,12 @@ class  Genre
   end 
   
   
+  def create_from_filename
+  end 
+  
+  
+  
   def artists
-    
+  end 
   
 end
