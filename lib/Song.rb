@@ -1,6 +1,8 @@
 require 'pry'
 
-class Song
+
+class Song 
+  attr_accessor :name 
   @@all = []
    
    
@@ -27,7 +29,7 @@ class Song
       
   def save 
      @@all << self 
-  end 
+  end
   
   
   def self.create(name)
@@ -57,5 +59,9 @@ class Song
     # if self.genre! = nil
     # @song << Song.genre 
   end
-end 
+  
 
+  def self.destroy_all 
+    @@all = []  
+  end
+end #end of class 
