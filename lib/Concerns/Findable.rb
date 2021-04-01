@@ -1,6 +1,7 @@
-module Findable::module ClassMethods
+module Findable::ClassMethods
   
-  
+module InstanceMethods 
+ def initialize
   def find_by_name(name)
     self.all.detect {|a| a. name}
     end 
@@ -9,7 +10,7 @@ module Findable::module ClassMethods
     
   def self.find_or_create_by_name(item)
     self.find(item) ? self.find(item) : self.new(item) 
-    end 
+    end
   end 
 end 
 

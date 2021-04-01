@@ -1,5 +1,4 @@
-module Memorable 
-   module ClassMethods 
+module Memorable::ClassMethods 
 
 module InstanceMethods 
  def initialize
@@ -9,6 +8,6 @@ end
 
 
 def save 
-    @@all << self 
+    @@all << self
   end 
 end
