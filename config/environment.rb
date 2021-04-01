@@ -1,8 +1,12 @@
 require 'pry'
 require 'bundler'
 Bundler.require
-require_relative '../lib/concerns/Findable'
-require_relative '../lib/concerns/Memorable'
-require_relative '../lib/artist.rb'
-require_relative '../lib/song.rb'
-require_relative '../lib/genre.rb'
+
+module Concerns
+end 
+  
+require_relative '../lib/concerns/Findable.rb'
+#require_relative '../lib/concerns/Memorable'
+require_relative '../lib/Artist.rb' 
+require_relative '../lib/Song.rb'
+require_relative '../lib/Genre.rb'

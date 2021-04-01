@@ -1,6 +1,6 @@
 class Artist 
    @@all = [] 
-  extend Findable::ClassMethods
+  extend Concerns::Findable
   
   def initialize(name:, song:)
     @name = name
@@ -9,7 +9,7 @@ class Artist
   end 
 
 
-  def name
+  def name 
     @name
   end 
   
@@ -50,7 +50,6 @@ class Artist
   end 
   
   
-  def self.find_or_create_by_name 
-  end 
-  
 end #end of class
+
+
