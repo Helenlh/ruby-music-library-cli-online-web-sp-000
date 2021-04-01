@@ -9,7 +9,7 @@ describe "Song" do
 
       new_song_name = new_song.instance_variable_get(:@name)
 
-      expect(new_song_name).to eq("Alison")
+      expect(new_song_name).to eq("Alison") 
     end
   end
 
