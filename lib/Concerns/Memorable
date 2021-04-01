@@ -1,0 +1,14 @@
+module Memorable 
+   module ClassMethods 
+
+module InstanceMethods 
+ def initialize
+    self.class.all << self   
+  end
+end 
+
+
+def save 
+    @@all << self 
+  end 
+end

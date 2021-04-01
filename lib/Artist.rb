@@ -1,7 +1,8 @@
 class Artist 
    @@all = [] 
+  extend Findable::ClassMethods
   
-  def initialize(name, song)
+  def initialize(name:, song:)
     @name = name
     @song = []  
     save 
