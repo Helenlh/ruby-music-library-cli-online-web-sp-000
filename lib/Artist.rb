@@ -2,7 +2,7 @@ class Artist
    @@all = [] 
   extend Concerns::Findable
   
-  def initialize(name:, song:)
+  def initialize(name)
     @name = name
     @song = []  
     save 
