@@ -1,5 +1,5 @@
 class Artist 
-  attr_accessor :name, :song, :artist 
+  attr_accessor :name
    @@all = [] 
   extend Concerns::Findable
   
@@ -7,8 +7,7 @@ class Artist
   def initialize(name)
     @name = name
     @songs = []  
-    save 
-  end 
+  end
 
 
   def name 
@@ -32,43 +31,28 @@ class Artist
   
   
   def save 
-    @@all << self 
+   @@all << self 
   end 
   
   
-  def create(name) 
-    artist = Artist.new(name) 
-    save 
+  def self.create(name)
+    new_artist = self.new(name)
+    new_artist.save 
+    new_artist 
   end
   
   
   def add_song(song)
-    
+    @songs << song
+    Artist.songs << song
   end 
   
+ 
   
- def songs   
-   artist.songs << song
-   
-   Song.all.select{|song| song.self == self}
-  end 
-  
-  
-  def self.find_by_name(name)
-    @@all.find {|person| person.name == name}
+  def self.find_by_name(name, genre)
+    song = Song.new(name, genre)
+    add_song(song)
   end 
 end 
 #end of class
 
-
-# def self. describe "#songs" do
-#       it "returns the artist's 'songs' collection (artist has many songs)" do
-#         expect(artist.songs).to eq([])
-
-#         artist.songs << song
-
-#         expect(artist.songs).to include(song)
-#       endcreate(name)
-#     self.new(name) 
-#     return Artist
-#   end 

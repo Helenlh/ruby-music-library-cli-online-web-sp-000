@@ -8,7 +8,7 @@ describe "Associations — Song and Artist:" do
     describe "#initialize" do
       it "creates a 'songs' property set to an empty array (artist has many songs)" do
         expect(artist.instance_variable_defined?(:@songs)).to be(true)
-        expect(artist.instance_variable_get(:@songs)).to eq([])
+        expect(artist.instance_variable_get(:@songs)).to eq([]) 
       end
     end
 
