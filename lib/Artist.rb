@@ -6,6 +6,14 @@ class Artist
   extend Concerns::Findable
   
   
+#   def each(&block)
+#     @songs.each(&block) 
+#   end
+# end
+  
+  
+  
+  
   def initialize(name)
     @name = name
     @songs = []  
@@ -46,15 +54,14 @@ class Artist
   
   
   def songs 
-    @songs.each do |song|
-      Artist.songs << song 
+    Song.all do |songs|
+       artist.songs << song
   end 
-end 
- 
+end
+
  
   def add_song(song)
-    @songs << song
-    Artist.songs << song
+    
   end 
   
  
@@ -63,6 +70,5 @@ end
     song = Song.new(name, genre)
     add_song(song)
   end 
-end 
-#end of class
+end
 
