@@ -1,3 +1,5 @@
+require 'pry'
+
 class Artist 
   attr_accessor :name
    @@all = [] 
@@ -44,11 +46,12 @@ class Artist
   
   
   def songs 
-    @songs 
+    @songs.each do |song|
+      Artist.songs << song 
   end 
-  
-  
-  
+end 
+ 
+ 
   def add_song(song)
     @songs << song
     Artist.songs << song
