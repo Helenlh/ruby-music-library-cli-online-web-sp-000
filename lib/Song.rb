@@ -4,7 +4,7 @@ require 'pry'
 class Song
   attr_accessor :name, :title 
   @@all = []
-
+  @songs = [] 
 
   
   def initialize(name = "Alison", artist)
@@ -48,6 +48,11 @@ class Song
   
   def artist=(artist) 
     @artist = artist 
+  end 
+  
+  
+  def song 
+    @song << song 
   end 
   
   
