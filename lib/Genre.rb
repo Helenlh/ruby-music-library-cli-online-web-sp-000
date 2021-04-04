@@ -6,7 +6,7 @@ class  Genre
     @name = name 
     save 
   end 
-  
+   
   
   def name
     @name 
@@ -50,7 +50,7 @@ class  Genre
   
   
   
-  def artists
+  def self.artists
   end 
   
 end

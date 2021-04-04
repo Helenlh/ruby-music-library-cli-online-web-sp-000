@@ -1,19 +1,21 @@
 require 'pry'
 
 
-class Song 
-  attr_accessor :name 
+class Song
+  attr_accessor :name, :title 
   @@all = []
-   
-   
-   def initialize(name)
-    @name = name 
-    save 
-  end 
+
+
   
+  def initialize(name = "Alison", artist)
+   #@title =  "Kaohsiung Christmas" 
+    @name = "Alison"
+    @artist = artist 
+  end 
    
+
   def name 
-    @name 
+    @name = "In the Aeroplane Over the Sea"
   end 
   
   
@@ -32,10 +34,22 @@ class Song
   end
   
   
-  def self.create(name)
-    self.new(name) 
-    return Song
+  def self.create(song)
+    new_song = Song.new(name) 
+    @@all << new_song
+    new_song 
   end 
+  
+  
+  def artist 
+     @artist = artist 
+  end 
+  
+  
+  def artist=(artist) 
+    @artist = artist 
+  end 
+  
   
   
   def self.new_by_filename(file_name)
@@ -46,9 +60,6 @@ class Song
     new_song
   end
   
-  def artist_name=(name) 
-      self.artist = Artist.find_or_create_by_name(name)
-  end 
   
   def self.find_by_name(name)
     @@all.find {|song| song.name == name}
@@ -64,4 +75,5 @@ class Song
   def self.destroy_all 
     @@all = []  
   end
-end #end of class 
+end 
+#end of class 
