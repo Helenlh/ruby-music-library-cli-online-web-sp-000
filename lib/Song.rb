@@ -42,7 +42,8 @@ class Song
   
   
   def artist 
-     @artist = artist 
+    @artist
+    #@artist = song.artist 
   end 
   
   
@@ -52,9 +53,10 @@ class Song
   
   
   def song 
-    @song << song 
+    @songs.each do |song|
+    self.artist = artist.song 
   end 
-  
+end 
   
   
   def self.new_by_filename(file_name)
