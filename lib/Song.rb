@@ -43,7 +43,6 @@ class Song
   
   def artist 
     @artist
-    #@artist = song.artist 
   end 
   
   

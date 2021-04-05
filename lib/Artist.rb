@@ -6,14 +6,7 @@ class Artist
   extend Concerns::Findable
   
   
-#   def each(&block)
-#     @songs.each(&block) 
-#   end
-# end
-  
-  
-  
-  
+
   def initialize(name)
     @name = name
     @songs = []  
@@ -49,26 +42,33 @@ class Artist
     new_artist = self.new(name)
     new_artist.save 
     new_artist 
-  end
-  
-  
-  
-  def songs 
-    Song.all do |songs|
-       artist.songs << song
   end 
-end
+  
+  
+   def songs  
+    @songs
+  end 
+  
+  
+  def songs=(songs)
+   @songs = songs 
+  end
 
+  def self.songs
+   new_artist = self.new(songs)
+    new_artist.save 
+    new_artist
+  end 
  
-  def add_song(song)
+  def self.add_song(song)
+     Artist.song << song
     
   end 
   
- 
+
   
   def self.find_by_name(name, genre)
     song = Song.new(name, genre)
     add_song(song)
   end 
-end
-
+end 
