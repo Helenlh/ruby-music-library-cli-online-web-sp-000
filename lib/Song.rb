@@ -2,26 +2,24 @@ require 'pry'
 
 
 class Song
-  attr_accessor :name, :title 
+  attr_accessor :name, :artist 
   @@all = []
-  @songs = [] 
 
   
-  def initialize(name = "Alison", artist)
-   #@title =  "Kaohsiung Christmas" 
-    @name = "Alison"
-    @artist = artist 
+  def initialize(name = "Alison", artist = nil)
+    @name = name 
+    self.artist = artist if artist 
   end 
    
 
-  def name 
-    @name = "In the Aeroplane Over the Sea"
-  end 
+  # def name 
+  #   @name = "In the Aeroplane Over the Sea"
+  # end 
   
   
-  def name=(name)
-    @name = name 
-  end 
+  # def name=(name)
+  #   @name = name 
+  # end 
   
   
   def self.all 
@@ -41,14 +39,14 @@ class Song
   end 
   
   
-  def artist 
-    @artist
-  end 
+  # def artist 
+  #   @artist
+  # end 
   
   
-  def artist=(artist) 
-    @artist = artist 
-  end 
+  # def artist=(artist) 
+  #   @artist = artist 
+  # end 
   
   
   def song 
