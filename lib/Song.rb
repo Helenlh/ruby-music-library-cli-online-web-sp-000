@@ -11,15 +11,15 @@ class Song
     self.artist = artist if artist 
   end 
    
-
-  # def name 
-  #   @name = "In the Aeroplane Over the Sea"
-  # end 
+   def name 
+     @name = "In the Aeroplane Over the Sea"
+  end 
   
   
-  # def name=(name)
-  #   @name = name 
-  # end 
+  def name=(name)
+    @name = name 
+  end 
+  
   
   
   def self.all 
@@ -38,22 +38,17 @@ class Song
     new_song 
   end 
   
-  
-  # def artist 
-  #   @artist
-  # end 
-  
-  
-  # def artist=(artist) 
-  #   @artist = artist 
-  # end 
-  
-  
-  def song 
-    @songs.each do |song|
-    self.artist = artist.song 
+
+ def artist 
+   @artist 
   end 
-end 
+  
+  
+  
+  def artist=(artist)
+    @artist = artist
+  end 
+  
   
   
   def self.new_by_filename(file_name)
@@ -71,13 +66,14 @@ end
   
   
   def genre
-    # if self.genre! = nil
-    # @song << Song.genre 
-  end
-  
-
-  def self.destroy_all 
-    @@all = []  
+    if self.genre != nil
+    @song << Song.genre 
   end
 end 
+
+    
+ def self.destroy_all 
+    @@all = []  
+  end 
+end
 #end of class 
