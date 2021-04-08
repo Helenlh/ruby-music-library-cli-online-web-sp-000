@@ -6,7 +6,16 @@ class Song
   attr_reader :artist 
   @@all = []
   @song = []
-  
+
+
+  # let(:song) { Song.new("In the Aeroplane Over the Sea") }
+  # describe "#initialize" do
+  #   it "accepts a name for the new song" do
+  #     new_song = Song.new("Alison")
+ 
+ 
+ # Song.new("In the Aeroplane Over the Sea"
+  # new_song = Song.new("Alison")
   
   
   def initialize(name = "Alison", artist = nil)
@@ -28,9 +37,8 @@ class Song
   
   
     def song 
-    new_song = Song.new 
-  end 
-  
+       new_song = Song.new ("Jump Around")
+    end 
   
   
   def self.all 

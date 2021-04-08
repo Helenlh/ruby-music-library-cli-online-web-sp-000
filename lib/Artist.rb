@@ -6,13 +6,24 @@ class Artist
   extend Concerns::Findable
   
   
+# describe "Artist" do
+#   let(:artist) { Artist.new("Neutral Milk Hotel") }
+
+#   describe "#initialize" do
+#     it "accepts a name for the new artist" do
+#       new_artist = Artist.new("Slowdive")
+
+#       new_artist_name = new_artist.instance_variable_get(:@name)
+
+#       expect(new_artist_name).to eq("Slowdive")
+
 
   def initialize(name)
     @name = name
     @songs = [] 
   end
 
-  
+ 
   
   def self.all 
     @@all
