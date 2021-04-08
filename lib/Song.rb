@@ -5,39 +5,20 @@ class Song
   attr_accessor :name
   attr_reader :artist 
   @@all = []
-  @song = []
 
 
-  # let(:song) { Song.new("In the Aeroplane Over the Sea") }
-  # describe "#initialize" do
-  #   it "accepts a name for the new song" do
-  #     new_song = Song.new("Alison")
- 
- 
- # Song.new("In the Aeroplane Over the Sea"
-  # new_song = Song.new("Alison")
-  
-  
-  def initialize(name = "Alison", artist = nil)
-    @name = name 
+   def initialize(name = "Alison", artist = nil)
+    #the starting values for name and artist, instance variables
+    @name = name
+    self.artist=artist unless artist == nil 
   end 
     
-   
-   def name 
-     @name = "In the Aeroplane Over the Sea"
-  end 
-  
-   
-  def name=(name) 
-    @name = name 
-    self.artist = artist if artist
-     artist.add_song 
-  end
+    
   
   
   
-    def song 
-       new_song = Song.new ("Jump Around")
+    def song
+       new_song = Song.new ("Jump Around") 
     end 
   
   
@@ -58,10 +39,9 @@ class Song
   end 
   
 
- 
   def artist=(artist) 
-    artist.add_song(song) 
     @artist = artist
+    artist.add_song(self) 
   end 
   
   
@@ -84,13 +64,6 @@ class Song
     @song << Song.genre 
   end
 end 
-
-
-  
-  def artist.add_song(song) 
-      artist.song = self unless song.artist
-    songs << song unless songs.include?(song) 
-  end 
   
   
  def self.destroy_all
