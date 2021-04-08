@@ -2,7 +2,8 @@ require 'pry'
 
 
 class Song
-  attr_accessor :name, :artist 
+  attr_accessor :name
+  attr_reader :artist 
   @@all = []
   @song = []
   
@@ -18,7 +19,7 @@ class Song
   end 
   
    
-  def name=(name)
+  def name=(name) 
     @name = name 
     self.artist = artist if artist
      artist.add_song 
@@ -49,15 +50,10 @@ class Song
   end 
   
 
- def artist 
-   @artist 
-  end 
-  
-  
-  
-  def artist=("Neutral Milk Hotel")
+ 
+  def artist=(artist) 
     artist.add_song(song) 
-    @artist = artist 
+    @artist = artist
   end 
   
   
