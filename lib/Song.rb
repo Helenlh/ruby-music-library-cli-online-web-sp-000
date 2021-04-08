@@ -57,7 +57,7 @@ class Song
   
   def artist=("Neutral Milk Hotel")
     artist.add_song(song) 
-    @artist = 
+    @artist = artist 
   end 
   
   
@@ -89,7 +89,7 @@ end
   end 
   
   
- def self.destroy_all 
+ def self.destroy_all
     @@all = []  
   end 
   end 
