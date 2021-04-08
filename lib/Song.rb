@@ -4,20 +4,30 @@ require 'pry'
 class Song
   attr_accessor :name, :artist 
   @@all = []
-
+  @song = []
+  
+  
   
   def initialize(name = "Alison", artist = nil)
     @name = name 
-    self.artist = artist if artist 
   end 
+    
    
    def name 
      @name = "In the Aeroplane Over the Sea"
   end 
   
-  
+   
   def name=(name)
     @name = name 
+    self.artist = artist if artist
+     artist.add_song 
+  end
+  
+  
+  
+    def song 
+    new_song = Song.new 
   end 
   
   
@@ -45,10 +55,10 @@ class Song
   
   
   
-  def artist=(artist)
-    @artist = artist
+  def artist=("Neutral Milk Hotel")
+    artist.add_song(song) 
+    @artist = 
   end 
-  
   
   
   def self.new_by_filename(file_name)
@@ -71,9 +81,16 @@ class Song
   end
 end 
 
-    
+
+  
+  def artist.add_song(song) 
+      artist.song = self unless song.artist
+    songs << song unless songs.include?(song) 
+  end 
+  
+  
  def self.destroy_all 
     @@all = []  
   end 
-end
-#end of class 
+  end 
+ 

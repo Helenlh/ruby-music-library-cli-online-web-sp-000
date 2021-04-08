@@ -11,6 +11,7 @@ class Artist
     @name = name
     @songs = [] 
   end
+
   
   
   def self.all 
@@ -37,25 +38,25 @@ class Artist
   
   
   def songs
-    @songs 
+    @songs
   end 
   
   
-  def songs=(songs)
-    @songs = songs 
+  def artist=(artist)
+    artist.add_song
+    #(song) 
+    @artist = artist
   end 
   
   
   
    def add_song(song) 
-      song.artist = self unless song.artist
+      artist.song = self unless song.artist
     songs << song unless songs.include?(song) 
   end 
 
 
   def self.find_by_name(name, genre)     
     song = Song.new(name, genre)
-    add_song(song) 
   end 
 end 
- 
