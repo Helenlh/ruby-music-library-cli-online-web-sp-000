@@ -1,22 +1,16 @@
 class  Genre 
+  attr_accessor :name
+  attr_reader :songs 
   @@all = []
+
 
   def initialize(name)
     @songs = []
-    @name = name 
-    save 
+    @name = name  
   end 
-   
   
-  def name
-    @name 
-  end
-  
-  
-  
-  def name=(name)
-    @name = name 
-  end 
+#   attr_reader : This accessor generates the automatic Getter method for the given item.
+# attr_writer : This accessor generates the automatic Setter method for the given item.
   
   
   def self.all 
@@ -25,18 +19,20 @@ class  Genre
   
   
   def save 
-    @@all << self 
+    @@all << self
+  end 
+  
+   
+  def self.destroy_all 
+    @@all = [] 
+    #can also call @@all.clear 
   end 
   
   
   def self.create(name)
-    self.new(name)
-    return self 
-  end 
-  
-  
-  def songs 
-    self.songs 
+    new_genre = self.new(name)
+    @@all << new_genre 
+     new_genre
   end 
   
   

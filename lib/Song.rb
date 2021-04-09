@@ -3,71 +3,63 @@ require 'pry'
 
 class Song
   attr_accessor :name
-  attr_reader :artist 
+  attr_reader :artist, :genre
+
   @@all = []
 
-
-   def initialize(name = "Alison", artist = nil)
-    #the starting values for name and artist, instance variables
+  def initialize(name, artist = nil, genre = nil)
     @name = name
-    self.artist=artist unless artist == nil 
-  end 
-    
-    
-  
-  
-  
-    def song
-       new_song = Song.new ("Jump Around") 
-    end 
-  
-  
-  def self.all 
-     @@all 
-  end 
-      
-      
-  def save 
-     @@all << self 
+    self.artist = artist if artist
+    self.genre = genre if genre
   end
-  
-  
-  def self.create(song)
-    new_song = Song.new(name) 
-    @@all << new_song
-    new_song 
-  end 
-  
 
-  def artist=(artist) 
+  def artist=(artist)
     @artist = artist
-    artist.add_song(self) 
-  end 
-  
-  
-  def self.new_by_filename(file_name)
-    song_name = file_name.split(" - ")[1] 
-    artist_one = file_name.split(" - ") 
-    new_song = Song.new(song_name)
-    new_song.artist_name=(artist_one)
-    new_song
+    artist.add_song(self)
   end
-  
-  
+
+  def genre=(genre)
+    @genre = genre
+  end
+
+  def self.all
+    @@all
+  end
+
+  def self.destroy_all
+    all.clear
+  end
+
+  def save
+    self.class.all << self
+    self
+  end
+
+  def self.create(name)
+    new(name).save
+  end
+
   def self.find_by_name(name)
-    @@all.find {|song| song.name == name}
-  end 
-  
-  
-  def genre
-    if self.genre != nil
-    @song << Song.genre 
+    all.detect{ |s| s.name == name }
   end
-end 
-  
-  
- def self.destroy_all
-    @@all = []  
-  end 
-  end 
- 
+
+  def self.find_or_create_by_name(name)
+    find_by_name(name) || create(name)
+  end
+
+  def self.new_from_filename(filename)
+    parts = filename.split(" - ")
+    artist_name, song_name, genre_name = parts[0], parts[1], parts[2].gsub(".mp3", "")
+
+    artist = Artist.find_or_create_by_name(artist_name)
+    genre = Genre.find_or_create_by_name(genre_name)
+
+    new(song_name, artist, genre)
+  end
+
+  def self.create_from_filename(filename)
+    new_from_filename(filename).save
+  end
+end
+
+   
