@@ -3,26 +3,39 @@ require 'pry'
 
 class Song
   attr_accessor :name
-  attr_reader :artist, :genre
+  attr_reader :artist, :genre 
 
   @@all = []
 
-  def initialize(name, artist = nil, genre = nil)
-    @name = name
+  def initialize(name, artist = nil, genre = nil) 
     self.artist = artist if artist
+    #self is a song instance 
+    #self inside an instance method, self refers to an instance.  if self is inside of a class method, self refers to the class
+    @name = name 
+    @@all << self
     self.genre = genre if genre
+    
   end
+  # it "can be invoked with an optional second argument, an Artist object to be assigned to the song's 'artist' property (song belongs to artist)" do
+  #       song_with_artist = Song.new("Two-Headed Boy", artist)
 
+  #       expect(song_with_artist.instance_variable_defined?(:@artist)).to be(true)
+  #       expect(song_with_artist.instance_variable_get(:@artist)).to be(artist)
+    
+  
   def artist=(artist)
     @artist = artist
-    artist.add_song(self)
+    artist.add_song(self) 
   end
 
   def genre=(genre)
-    @genre = genre
-  end
+     @genre = genre
+     genre.songs << self 
+   end 
 
-  def self.all
+
+
+  def self.all 
     @@all
   end
 
@@ -56,7 +69,7 @@ class Song
 
     new(song_name, artist, genre)
   end
-
+ 
   def self.create_from_filename(filename)
     new_from_filename(filename).save
   end

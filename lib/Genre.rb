@@ -12,6 +12,9 @@ class  Genre
 #   attr_reader : This accessor generates the automatic Getter method for the given item.
 # attr_writer : This accessor generates the automatic Setter method for the given item.
   
+  # Classical set method
+  # def website=(website)
+  #   @website = website
   
   def self.all 
     @@all 
