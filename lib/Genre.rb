@@ -51,7 +51,4 @@ class  Genre
   
   def self.artists
   end 
-  
-  
- 
 end 

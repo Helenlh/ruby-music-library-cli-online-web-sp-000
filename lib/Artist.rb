@@ -11,7 +11,6 @@ class Artist
     @songs = [] 
   end
 
- 
   
   def self.all 
     @@all
@@ -35,13 +34,16 @@ class Artist
   end 
   
   
-  
   def songs
     @songs
   end 
   
   
-  
+  def genres 
+    @@all.songs.genres << genres 
+    if all.songs.genres 
+  end 
+end 
   
    def add_song(song) 
       song.artist = self unless song.artist
@@ -53,3 +55,4 @@ class Artist
     song = Song.new(name, genre)
   end 
 end 
+
