@@ -39,11 +39,6 @@ class  Genre
   end 
   
   
-  def self.destroy_all 
-    @@all = [] 
-  end 
-  
-  
   def create_from_filename
   end 
   

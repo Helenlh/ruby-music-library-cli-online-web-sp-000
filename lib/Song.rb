@@ -2,7 +2,7 @@ require 'pry'
 
 
 class Song
-  attr_accessor :name
+  attr_accessor :name, :artist 
   attr_reader :artist, :genre 
 
   @@all = []
@@ -14,8 +14,8 @@ class Song
     @name = name 
     @@all << self
     self.genre = genre if genre
-    
   end
+  
   # it "can be invoked with an optional second argument, an Artist object to be assigned to the song's 'artist' property (song belongs to artist)" do
   #       song_with_artist = Song.new("Two-Headed Boy", artist)
 
@@ -30,7 +30,7 @@ class Song
 
   def genre=(genre)
      @genre = genre
-     genre.songs << self unless genre.songs.include? self 
+     genre.songs << self unless genre.songs.include? self
    end 
 
 #read about self 
@@ -69,10 +69,20 @@ class Song
 
     new(song_name, artist, genre)
   end
- 
+
+
   def self.create_from_filename(filename)
     new_from_filename(filename).save
   end
-end
+  
+  
+  def artist_name= (name)
+    if (self_artist.nil?)
+      self.artist = Artist.new(name)
+    else 
+      self.artist_name = name 
+    end 
+  end 
+end 
 
    
