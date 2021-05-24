@@ -42,17 +42,9 @@ class  Genre
   def create_from_filename
   end 
   
-  
-  def songs 
-    Song.all.map do |song| 
-      song 
-    end 
-  end 
-    
+
     
     def artists 
-      songs.map do |genre| 
-        genre.artist 
-      end 
+     self.songs.collect {|song| song.artist}.uniq
     end 
 end 
