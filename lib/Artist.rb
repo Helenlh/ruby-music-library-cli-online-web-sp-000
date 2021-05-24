@@ -9,6 +9,7 @@ class Artist
   def initialize(name)
     @name = name
     @songs = [] 
+    @@all << self
   end
 
   
@@ -35,13 +36,21 @@ class Artist
   
   
   def songs
-    @songs
+    #@@all.select do |songs|
+      #self.song << song 
+      
+    Songs.all.select do |song|
+      self << songs.artist 
+      self.songs
+    end 
   end 
   
   
   def genres 
-    @@all.Songs.genres << genres 
-    if all.Songs.genres 
+    songs.map do |song|
+      songs.genre 
+    #@@all.Songs.genres << genres 
+    #if all.Songs.genres 
   end 
 end 
   
