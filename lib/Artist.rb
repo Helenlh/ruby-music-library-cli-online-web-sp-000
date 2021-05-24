@@ -40,8 +40,8 @@ class Artist
   
   
   def genres 
-    @@all.songs.genres << genres 
-    if all.songs.genres 
+    @@all.Songs.genres << genres 
+    if all.Songs.genres 
   end 
 end 
   

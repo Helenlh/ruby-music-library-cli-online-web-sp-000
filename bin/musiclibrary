@@ -1,16 +1,15 @@
 #!/usr/bin/env ruby
-
 require_relative '../config/environment'
 
-MusicLibraryController.new.call
+
+Class MusicLibraryController
 
 
+end 
 
-in the bin folder you will have a file called musiclibrary
 
-
-and in the bin/musiclibrary, i will have a method called controller?
-
-It is where you will call the call method on a new instance of your MusicLibraryController class
-
-The controller holds the methods that your cli will use
+#MusicLibraryController.new.call
+#in the bin folder you will have a file called musiclibrary
+#and in the bin/musiclibrary, i will have a method called controller?
+#It is where you will call the call method on a new instance of your MusicLibraryController class
+#The controller holds the methods that your cli will use
