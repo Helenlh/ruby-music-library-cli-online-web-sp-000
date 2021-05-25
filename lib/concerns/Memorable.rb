@@ -1,4 +1,4 @@
-module Concerns::Memorable
+module Memorable:ClassMethod 
 
  def initialize
     self.class.all << self   
