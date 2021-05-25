@@ -3,7 +3,7 @@ require 'pry'
 
 class Song
   attr_accessor :name, :artist 
-  attr_reader :artist, :genre 
+  attr_reader :genre 
 
   @@all = []
 
@@ -22,11 +22,11 @@ class Song
   #       expect(song_with_artist.instance_variable_defined?(:@artist)).to be(true)
   #       expect(song_with_artist.instance_variable_get(:@artist)).to be(artist)
     
+  # def artist=(artist)
+  #   @artist = artist
+  #   artist.add_song(self) 
+  # end
   
-  def artist=(artist)
-    @artist = artist
-    artist.add_song(self) 
-  end
 
   def genre=(genre)
      @genre = genre
