@@ -34,6 +34,14 @@ class Artist
   end 
   
   
+
+  def songs
+    binding.pry 
+    #@@all.select do |songs|
+      #self.song << song 
+      
+    
+  
   def genres 
     self.songs.collect {|song| song.genre}.uniq
 end 
@@ -42,9 +50,10 @@ end
       song.artist = self unless song.artist
     self.songs << song unless songs.include?(song) 
   end 
+end 
 
 
-  def self.find_by_name(name, genre)    
+  def self.find_by_name     
     song = Song.new(name, genre)
   end 
 end 

@@ -1,11 +1,11 @@
-module Memorable::ClassMethods 
+module Concerns::Memorable
 
  def initialize
     self.class.all << self   
   end
 end 
 
-module InstanceMethods
+module Memorable::InstanceMethods
 def save 
     @@all << self
   end 
