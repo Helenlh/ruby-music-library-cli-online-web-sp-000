@@ -34,7 +34,7 @@ class Artist
   end 
   
   def add_song(song) 
-    song.artist = self  
+    song.artist = self unless song.artist  
   end 
   
   
@@ -54,5 +54,3 @@ class Artist
     song = Song.new(name, genre)
   end 
 end 
-
-

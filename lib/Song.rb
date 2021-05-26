@@ -22,10 +22,10 @@ class Song
   #       expect(song_with_artist.instance_variable_defined?(:@artist)).to be(true)
   #       expect(song_with_artist.instance_variable_get(:@artist)).to be(artist)
     
-  # def artist=(artist)
-  #   @artist = artist
-  #   artist.add_song(self) 
-  # end
+  def artist=(artist)
+    #   @artist = artist
+    artist.add_song(self) 
+  end
   
 
   def genre=(genre)
