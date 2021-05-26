@@ -7,13 +7,14 @@ class Song
 
   @@all = []
 
-  def initialize(name, artist = nil, genre = nil) 
+  def initialize(name, artist = nil)
+    #def initialize(name, artist = nil, genre = nil) 
     self.artist = artist if artist
     #self is a song instance 
     #self inside an instance method, self refers to an instance.  if self is inside of a class method, self refers to the class
     @name = name 
     @@all << self
-    self.genre = genre if genre
+    #self.genre = genre if genre
   end
   
   # it "can be invoked with an optional second argument, an Artist object to be assigned to the song's 'artist' property (song belongs to artist)" do
@@ -33,7 +34,6 @@ class Song
      genre.songs << self unless genre.songs.include? self
    end 
 
-#read about self 
 
   def self.all 
     @@all
