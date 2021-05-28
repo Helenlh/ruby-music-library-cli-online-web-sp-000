@@ -7,24 +7,27 @@ class Song
 
   @@all = []
 
-  def initialize(name, artist = nil)
-    #def initialize(name, artist = nil, genre = nil) 
+
+  def initialize(name)
+    def initialize(name, artist = nil, genre = nil) 
     self.artist = artist if artist
+    @name = name
+    @song = []  
+    save 
+  end 
+    
+    #def initialize(name, artist = nil, genre = nil) 
+    #self.artist = artist if artist
     #self is a song instance 
     #self inside an instance method, self refers to an instance.  if self is inside of a class method, self refers to the class
-    @name = name 
-    @@all << self
-    #self.genre = genre if genre
-  end
   
-  # it "can be invoked with an optional second argument, an Artist object to be assigned to the song's 'artist' property (song belongs to artist)" do
-  #       song_with_artist = Song.new("Two-Headed Boy", artist)
+  
+    #The requirements for each model are that they can accept a `name` upon initialization and set that property correctly. The `name` property should be readable and writable by the object.
+    #self inside an instance method, self refers to an instance.  if self is inside of a class method, self refers to the class
 
-  #       expect(song_with_artist.instance_variable_defined?(:@artist)).to be(true)
-  #       expect(song_with_artist.instance_variable_get(:@artist)).to be(artist)
-    
+  
   def artist=(artist)
-    #   @artist = artist
+    @artist = artist
     artist.add_song(self) 
   end
   
@@ -39,26 +42,38 @@ class Song
     @@all
   end
 
+
+
   def self.destroy_all
     all.clear
   end
+  
+  
 
   def save
     self.class.all << self
     self
   end
 
+
+
   def self.create(name)
     new(name).save
   end
+
+
 
   def self.find_by_name(name)
     all.detect{ |s| s.name == name }
   end
 
+
+
   def self.find_or_create_by_name(name)
     find_by_name(name) || create(name)
   end
+
+
 
   def self.new_from_filename(filename)
     parts = filename.split(" - ")
