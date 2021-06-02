@@ -60,7 +60,7 @@ class Song
 => [#<Song:0x00007fffe420a8a0 @name="The King of Carrot Flowers, Pt. One">,
   #<Song:0x00007fffe420a8a0 @name="The King of Carrot Flowers, Pt. One">,
   #<Song:0x00007fffe420a738 @name="In the Aeroplane Over the 
-  
+
   def self.new_from_filename(filename)
     parts = filename.split(" - ")
     artist_name, song_name, genre_name = parts[0], parts[1], parts[2].gsub(".mp3", "")
