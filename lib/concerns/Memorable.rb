@@ -8,5 +8,6 @@ end
 module Memorable::InstanceMethods
 def save 
     @@all << self
+    binding.pry 
   end 
 end

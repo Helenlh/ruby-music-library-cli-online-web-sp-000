@@ -1,0 +1,12 @@
+
+[1mFrom:[0m /mnt/c/Users/Helen/ruby-music-library-cli-online-web-sp-000/lib/Artist.rb @ line 42 Artist#add_song:
+
+    [1;34m36[0m:   [32mdef[0m [1;34madd_song[0m(song)  
+    [1;34m37[0m:     song.artist = [1;36mself[0m [32munless[0m song.artist 
+    [1;34m38[0m: 
+    [1;34m39[0m:      [1;34m#artist evaluates to @artist which is Artist: whatever the number in memory is.[0m
+    [1;34m40[0m: [1;34m#song is an object which is being passed into the method.[0m
+    [1;34m41[0m: [1;34m#we want to add the song to the son's array unless it is already in there.[0m
+ => [1;34m42[0m:     binding.pry 
+    [1;34m43[0m:   [32mend[0m 
+
