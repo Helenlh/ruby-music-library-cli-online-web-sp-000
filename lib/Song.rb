@@ -5,21 +5,21 @@ class Song
   attr_accessor :name, :artist 
   attr_reader :genre 
 
+  extend Concerns::Findable
   @@all = []
 
-    def initialize(name, artist=nil, genre=nil) 
+    def initialize(name, artist=nil, genre=nil)  
     self.artist = artist if artist
     #self is a song instance 
     #self inside an instance method, self refers to an instance.  if self is inside of a class method, self refers to the class
     @name = name
-    @@all << self
+    # @@all << self
     self.genre = genre if genre
   end
   
  
-  def artist=(artist)
+  def artist=(artist) 
        @artist = artist
-       #binding.pry
     artist.add_song(self) 
   end
   
@@ -39,29 +39,21 @@ class Song
   end
 
   def save
-    self.class.all << self
+    @@all << self
     self
   end
 
   def self.create(name)
-    new(name).save
+    song = new(name)
+    song.save
   end
 
   def self.find_by_name(name)
-    binding.pry 
-    all.detect{ |s| s.name == name }
+    all.detect{ |s| s.name == name } 
   end
 
-  def self.find_or_create_by_name(name)
-    find_by_name(name) || create(name)
-  end
 
-  #pry(Song)> all
-=> [#<Song:0x00007fffe420a8a0 @name="The King of Carrot Flowers, Pt. One">,
-  #<Song:0x00007fffe420a8a0 @name="The King of Carrot Flowers, Pt. One">,
-  #<Song:0x00007fffe420a738 @name="In the Aeroplane Over the 
-
-  def self.new_from_filename(filename)
+    def self.new_from_filename(filename)
     parts = filename.split(" - ")
     artist_name, song_name, genre_name = parts[0], parts[1], parts[2].gsub(".mp3", "")
 

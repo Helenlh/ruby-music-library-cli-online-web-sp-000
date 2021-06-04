@@ -33,15 +33,19 @@ class Artist
     new_artist 
   end 
   
-  def add_song(song) 
-    @songs << song 
-    song.artist = self unless song.artist  
+  def add_song(song)  
+    song.artist = self unless song.artist 
+    Songs << self 
+     #artist evaluates to @artist which is Artist: whatever the number in memory is.
+#song is an object which is being passed into the method.
+#we want to add the song to the song's array unless it is already in there. 
   end 
   
-  
+  #rspec ./spec/004_songs_and_artists_spec.rb:72 # Associations — Song and Artist: 
+  # Artist #add_song adds the song to the current artist's 'songs' collection
 
-  def songs
-    Song.all
+  def songs 
+    @@all
    end
   
   
