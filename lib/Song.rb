@@ -8,16 +8,19 @@ class Song
   extend Concerns::Findable
   @@all = []
 
-    def initialize(name, artist=nil, genre=nil)  
+    def initialize(name="Alison", artist=nil, genre=nil)  
     self.artist = artist if artist
-    #self is a song instance 
-    #self inside an instance method, self refers to an instance.  if self is inside of a class method, self refers to the class
-    @name = name
-    # @@all << self
+#@name = name
+    #new_song = Song.new(name) PERPETUAL LOOP
+    @@all << new_song 
+     new_song 
+    @@all << self
+
     self.genre = genre if genre
   end
-  
- 
+
+
+
   def artist=(artist) 
        @artist = artist
     artist.add_song(self) 

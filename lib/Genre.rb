@@ -15,6 +15,8 @@ class  Genre
   # Classical set method
   # def website=(website)
   #   @website = website
+  #getter method
+  #@website
   
   def self.all 
     @@all 
