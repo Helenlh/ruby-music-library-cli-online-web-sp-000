@@ -11,11 +11,11 @@ class Song
 
      
       def initialize(name) 
-        #self.artist = artist if artist 
+        self.artist = artist if artist 
     @@all << self
     #artist.song
-    #song.artist = Song.new 
-    #self.genre = genre if genre
+    song.artist = Song.new 
+    self.genre = genre if genre
   end
 
 
