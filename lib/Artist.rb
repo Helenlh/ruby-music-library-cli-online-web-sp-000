@@ -53,8 +53,7 @@ class Artist
     self.songs.collect {|song| song.genre}.uniq 
   end 
   
-
-
+  
   def self.find_by_name     
     song = Song.new(name, genre)
   end 

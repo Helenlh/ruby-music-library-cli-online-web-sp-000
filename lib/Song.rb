@@ -6,17 +6,16 @@ class Song
   attr_reader :genre 
 
   extend Concerns::Findable
+  
   @@all = []
 
-    def initialize(name="Alison", artist=nil, genre=nil)  
-    self.artist = artist if artist
-#@name = name
-    #new_song = Song.new(name) PERPETUAL LOOP
-    @@all << new_song 
-     new_song 
+     
+      def initialize(name) 
+        #self.artist = artist if artist 
     @@all << self
-
-    self.genre = genre if genre
+    #artist.song
+    #song.artist = Song.new 
+    #self.genre = genre if genre
   end
 
 

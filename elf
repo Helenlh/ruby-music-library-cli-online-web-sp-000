@@ -1,0 +1,11 @@
+
+[1mFrom:[0m /mnt/c/Users/Helen/ruby-music-library-cli-online-web-sp-000/lib/Song.rb @ line 12 Song#initialize:
+
+    [1;34m11[0m:   [32mdef[0m [1;34minitialize[0m(name, artist=[1;36mnil[0m, genre=[1;36mnil[0m)  
+ => [1;34m12[0m:     binding.pry 
+    [1;34m13[0m:   [1;36mself[0m.artist = artist [32mif[0m artist 
+    [1;34m14[0m:   [36m@@all[0m << [1;36mself[0m
+    [1;34m15[0m: 
+    [1;34m16[0m:   [1;36mself[0m.genre = genre [32mif[0m genre
+    [1;34m17[0m: [32mend[0m
+
